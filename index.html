@@ -137,10 +137,16 @@ const startTimes={
  sanmartino:"14:30",
  revigliasco:"14:00"
 };
+const routeNotes={
+ antignano:"Percorso breve, con alcuni tratti sterrati.",
+ celle:"Percorso breve, con alcuni tratti sterrati.",
+ sanmartino:"Percorso medio-lungo, quasi interamente sterrato, con tratti più impegnativi.",
+ revigliasco:"Percorso lungo, interamente su asfalto."
+};
 const routeGrid=document.getElementById('routeGrid');
 Object.entries(routes).forEach(([key,r])=>{
  const card=document.createElement('article'); card.className='route-card';
- card.innerHTML=`<h3 class="route-name">${r.name}</h3><div class="chips"><span class="chip">🕒 Partenza indicativa ${startTimes[key]}</span><span class="chip">${r.distance_km.toFixed(1)} km</span><span class="chip">+${r.ascent_m} m</span><span class="chip">${r.level}</span></div><p>Verso il Santuario del Vallone · arrivo previsto ore 16:00 circa.</p><button class="btn green" data-route="${key}">🗺️ Guarda il percorso</button>`;
+ card.innerHTML=`<h3 class="route-name">${r.name}</h3><div class="chips"><span class="chip">🕒 Partenza indicativa ${startTimes[key]}</span><span class="chip">${r.distance_km.toFixed(1)} km</span><span class="chip">${r.level}</span></div><p><strong>${routeNotes[key]}</strong><br>Verso il Santuario del Vallone · arrivo previsto ore 16:00 circa.</p><button class="btn green" data-route="${key}">🗺️ Guarda il percorso</button>`;
  routeGrid.appendChild(card);
 });
 
@@ -158,8 +164,8 @@ const modal=document.getElementById('routeModal');
 function openRoute(key){
  const r=routes[key];
  document.getElementById('modalTitle').textContent=r.name+' → Vallone';
- document.getElementById('modalSubtitle').textContent=r.level;
- document.getElementById('mapMeta').innerHTML=`<span class="chip">🕒 Partenza indicativa ${startTimes[key]}</span><span class="chip">${r.distance_km.toFixed(2)} km</span><span class="chip">Dislivello +${r.ascent_m} m circa</span><span class="chip">Arrivo ≈ 16:00</span>`;
+ document.getElementById('modalSubtitle').textContent=r.level+' · '+routeNotes[key];
+ document.getElementById('mapMeta').innerHTML=`<span class="chip">🕒 Partenza indicativa ${startTimes[key]}</span><span class="chip">${r.distance_km.toFixed(2)} km</span><span class="chip">Arrivo ≈ 16:00</span>`;
  modal.classList.add('open'); document.body.style.overflow='hidden';
  setTimeout(()=>{
   if(!window.L){ document.getElementById('routeMap').innerHTML='<div style="padding:30px;text-align:center">La mappa non può essere caricata in questo momento. Verifica la connessione a Internet.</div>'; return; }
