@@ -29,6 +29,19 @@ details{border-top:1px solid var(--line);padding-top:10px} summary{cursor:pointe
 .footer{padding:30px 0 46px;text-align:center;color:var(--muted);font-size:.9rem} .small-note{font-size:.88rem;color:var(--muted)}
 .modal{position:fixed;inset:0;background:rgba(15,24,17,.7);display:none;z-index:1000;padding:18px;align-items:center;justify-content:center} .modal.open{display:flex} .modal-card{background:var(--paper);width:min(900px,100%);max-height:92vh;border-radius:22px;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.28)} .modal-head{padding:18px 18px 12px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;position:sticky;top:0;background:var(--paper);z-index:3;border-bottom:1px solid var(--line)} .modal-head h3{margin:0;font-family:Georgia,serif;color:var(--green);font-size:1.45rem} .close{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:white;font-size:1.35rem;cursor:pointer} .map{height:min(58vh,500px);width:100%} .map-meta{padding:14px 18px 19px;display:flex;gap:8px;flex-wrap:wrap} .map-note{padding:0 18px 18px;color:var(--muted);font-size:.9rem}
 .topbtn{position:fixed;right:17px;bottom:17px;width:46px;height:46px;border-radius:50%;background:var(--green);color:white;border:0;box-shadow:var(--shadow);font-size:1.25rem;display:none;z-index:50;cursor:pointer}
+
+.song-list{display:grid;gap:14px;margin-top:22px}
+.song-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.song-card details{padding:0}
+.song-card summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:Georgia,serif;font-size:1.18rem;font-weight:700;color:var(--green);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.song-card summary::-webkit-details-marker{display:none}
+.song-card summary::after{content:"＋";font-family:system-ui,sans-serif;font-size:1.25rem}
+.song-card details[open] summary::after{content:"−"}
+.song-text{border-top:1px solid var(--line);padding:18px 20px 22px;white-space:normal}
+.song-text p{margin:.2rem 0 1rem}
+.song-text .rit{font-weight:800}
+.song-text .rit em{font-weight:700}
+
 @media(max-width:700px){.hero-photo{height:58vw;min-height:280px} .route-grid,.steps,.arrival-grid{grid-template-columns:1fr} section{padding:44px 0} .hero-text{padding:28px 0 24px} .step img{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -44,6 +57,7 @@ details{border-top:1px solid var(--line);padding-top:10px} summary{cursor:pointe
       <div class="hero-actions" style="margin-top:18px">
         <a class="btn primary" href="#percorsi">🥾 Scegli il tuo cammino</a>
         <a class="btn secondary" href="#spirito">🌿 Scopri lo spirito</a>
+        <a class="btn secondary" href="#canti">🎵 Canti</a>
       </div>
     </div>
   </div>
@@ -111,6 +125,118 @@ details{border-top:1px solid var(--line);padding-top:10px} summary{cursor:pointe
   </div>
  </div>
 </section>
+
+
+<section id="canti">
+ <div class="wrap">
+  <h2 class="section-title">Canti al Vallone</h2>
+  <p class="lead">I tre canti che accompagneranno il momento comune al Santuario. Tocca il titolo per aprire il testo.</p>
+
+  <div class="song-list">
+
+   <article class="song-card">
+    <details>
+     <summary>🎵 Veniamo da Te</summary>
+     <div class="song-text">
+      <p class="rit">Veniamo da te,<br>
+      chiamati per nome.<br>
+      Che festa, Signore, tu cammini con noi.<br>
+      Ci parli di te,<br>
+      per noi spezzi il pane,<br>
+      ti riconosciamo e il cuore arde: sei Tu!<br>
+      E noi tuo popolo<br>
+      siamo qui.</p>
+
+      <p>Siamo come terra ed argilla<br>
+      e la tua Parola ci plasmerà,<br>
+      brace pronta per la scintilla<br>
+      e il tuo Spirito soffierà,<br>
+      c’infiammerà.</p>
+
+      <p class="rit">Veniamo da te, chiamati per nome…</p>
+
+      <p>Siamo come semi nel solco,<br>
+      come vigna che il suo frutto darà,<br>
+      grano del Signore risorto,<br>
+      la tua messe che fiorirà<br>
+      d’eternità.</p>
+
+      <p class="rit">Veniamo da te, chiamati per nome…<br>
+      E noi tuo popolo<br>
+      siamo qui.<br>
+      Siamo qui.</p>
+     </div>
+    </details>
+   </article>
+
+   <article class="song-card">
+    <details>
+     <summary>🎵 Laudato sii, Signore mio</summary>
+     <div class="song-text">
+      <p class="rit"><em>Laudato sii, Signore mio! Laudato sii, Signore mio!<br>
+      Laudato sii, Signore mio! Laudato sii, Signore mio!</em></p>
+
+      <p>Per il sole di ogni giorno che riscalda e dona vita;<br>
+      egli illumina il cammino di chi cerca Te, Signore.<br>
+      Per la luna e per le stelle io le sento mie sorelle;<br>
+      Le hai formate su nel cielo e le doni a chi è nel buio.</p>
+
+      <p class="rit"><em>Laudato sii, Signore mio! Laudato sii, Signore mio!<br>
+      Laudato sii, Signore mio! Laudato sii, Signore mio!</em></p>
+
+      <p>Per la nostra madre terra che ci dona fiori ed erba;<br>
+      su di lei noi fatichiamo per il pane di ogni giorno.<br>
+      Per chi soffre con coraggio e perdona nel Tuo amore;<br>
+      Tu gli dai la pace Tua alla sera della vita.</p>
+
+      <p class="rit"><em>Laudato sii, Signore mio! Laudato sii, Signore mio!<br>
+      Laudato sii, Signore mio! Laudato sii, Signore mio!</em></p>
+
+      <p>Per la morte che è di tutti io la sento in ogni istante,<br>
+      ma se vivo nel Tuo amore dona un senso alla mia vita.<br>
+      Per l'amore che è nel mondo tra una donna e l'uomo suo,<br>
+      per la vita dei bambini che il mio mondo fanno nuovo.<br>
+      Io ti canto mio Signore e con me la creazione;<br>
+      ti ringrazio umilmente perché Tu sei il Signore!</p>
+
+      <p class="rit"><em>Laudato sii, Signore mio! Laudato sii, Signore mio!<br>
+      Laudato sii, Signore mio! Laudato sii, Signore mio!</em></p>
+     </div>
+    </details>
+   </article>
+
+   <article class="song-card">
+    <details>
+     <summary>🎵 Giovane donna</summary>
+     <div class="song-text">
+      <p>Giovane donna attesa dall'umanità<br>
+      un desiderio d'amore e pura libertà,<br>
+      il Dio lontano è qui vicino a te,<br>
+      voce e silenzio, annuncio di novità.</p>
+
+      <p class="rit"><em>Ave Maria! Ave Maria!</em></p>
+
+      <p>Dio t'ha prescelta qual madre piena di bellezza<br>
+      ed il suo amore ti avvolgerà nella sua ombra;<br>
+      grembo di Dio venuto sulla terra,<br>
+      tu sarai madre di un uomo nuovo.</p>
+
+      <p class="rit"><em>Ave Maria! Ave Maria!</em></p>
+
+      <p>Ecco l'ancella che vive della tua Parola,<br>
+      libero il cuore perché l'amore trovi casa.<br>
+      Ora l'attesa è densa di preghiera<br>
+      e l'uomo nuovo è qui in mezzo a noi.</p>
+
+      <p class="rit"><em>Ave Maria! Ave Maria!</em></p>
+     </div>
+    </details>
+   </article>
+
+  </div>
+ </div>
+</section>
+
 </main>
 
 <footer class="footer"><div class="wrap">Tutti per uno e Francesco per tutti! · Quattro comunità, quattro strade, un unico cammino.</div></footer>
